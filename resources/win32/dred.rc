@@ -1,0 +1,29 @@
+#include "../../source/dred/dred_build_config.h"
+#include "winuser.h"    // <-- Not including this will result in the manifest not getting embedded properly when built with windres (GCC)
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "dred.exe.manifest"  // CREATEPROCESS_MANIFEST_RESOURCE = 1. RT_MANIFEST = 24.
+101 ICON    "../branding/dred_appicon.ico"
+
+1 VERSIONINFO
+FILEVERSION DRED_VERSION_MAJOR,DRED_VERSION_MINOR,DRED_VERSION_REVISION,0
+PRODUCTVERSION DRED_VERSION_MAJOR,DRED_VERSION_MINOR,DRED_VERSION_REVISION,0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904E4"
+        BEGIN
+            VALUE "CompanyName", DRED_COMPANY_NAME
+            VALUE "FileDescription", DRED_PRODUCT_DESCRIPTION
+            VALUE "FileVersion", DRED_VERSION_STRING
+            VALUE "InternalName", DRED_PRODUCT_NAME
+            VALUE "LegalCopyright", "\xA9 " DRED_COMPANY_NAME
+            VALUE "OriginalFilename", DRED_EXE_NAME
+            VALUE "ProductName", DRED_PRODUCT_NAME
+            VALUE "ProductVersion", DRED_VERSION_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1252
+    END
+END

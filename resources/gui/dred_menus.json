@@ -1,0 +1,137 @@
+// The menus defined here represent the default format of the menus. These can be modified at run-time.
+
+{"menus":[
+    {"id":"generic.help", "items":[
+        {"id":"generic.help.about", "text":"&About...", "cmd":"about"}
+    ]},
+    
+
+    {"id":"generic.settings.themes", "items":[
+        {"id":"generic.settings.themes.dark", "text":"Dark (Default)", "cmd":"load-config dark.dredtheme"},
+        {"id":"generic.settings.themes.light", "text":"Light", "cmd":"load-config light.dredtheme"}
+    ]},
+
+    {"id":"generic.settings", "items":[
+        {"id":"generic.settings.themes", "text":"&Themes", "submenu":"generic.settings.themes"},
+        {"id":"separator"},
+        {"id":"generic.settings.settings", "text":"&Settings", "cmd":"settings"}
+    ]},
+    
+    
+    {"id":"recent-files", "items":[
+    ]},
+    
+    {"id":"favourite-files", "items":[
+    ]},
+    
+    
+    {"id":"nothingopen.file", "items":[
+        {"id":"nothingopen.file.new", "text":"&New", "shortcut":"file.new"},
+        {"id":"nothingopen.file.open", "text":"&Open...", "shortcut":"file.open"},
+        {"id":"nothingopen.file.open.recent", "text":"Open Recent", "submenu":"recent-files"},
+        {"id":"nothingopen.file.open.favourite", "text":"Open Favourite", "submenu":"favourite-files"},
+        {"id":"separator"},
+        {"id":"nothingopen.file.clearrecentfiles", "text":"Clear Recent Files", "cmd":"clear-recent-files"},
+        {"id":"separator"},
+        {"id":"nothingopen.file.exit", "text":"E&xit", "shortcut":"exit"}
+    ]},
+    
+    {"id":"nothingopen.view", "items":[
+		{"id":"nothingopen.view.tabbars", "type":"check", "text":"Show &Tab Bars", "cmd":"toggle-tab-bar", "config":"show-tab-bar"},
+        {"id":"nothingopen.view.cmdbar", "type":"check", "text":"Auto-Hide &Command Bar", "cmd":"toggle-auto-hide-cmdbar", "config":"auto-hide-cmd-bar"}
+    ]},
+    
+    {"id":"nothingopen", "type":"menubar", "items":[
+        {"id":"nothingopen.file", "text":"&File", "submenu":"nothingopen.file"},
+        {"id":"nothingopen.view", "text":"&View", "submenu":"nothingopen.view"},
+        {"id":"nothingopen.settings", "text":"&Settings", "submenu":"generic.settings"},
+        {"id":"nothingopen.help", "text":"&Help", "submenu":"generic.help"}
+    ]},
+    
+    
+    {"id":"text.file", "items":[
+        {"id":"text.file.new", "text":"&New", "shortcut":"file.new"},
+        {"id":"text.file.open", "text":"&Open...", "shortcut":"file.open"},
+        {"id":"text.file.open.recent", "text":"Open Recent", "submenu":"recent-files"},
+        {"id":"text.file.open.favourite", "text":"Open Favourite", "submenu":"favourite-files"},
+        {"id":"separator"},
+        {"id":"text.file.addfavourite", "text":"Add to Favourites", "cmd":"add-favourite"},
+        {"id":"text.file.removefavourite", "text":"Remove from Favourites", "cmd":"remove-favourite"},
+        {"id":"separator"},
+        {"id":"text.file.clearrecentfiles", "text":"Clear Recent Files", "cmd":"clear-recent-files"},
+        {"id":"separator"},
+        {"id":"text.file.save", "text":"&Save", "shortcut":"file.save"},
+        {"id":"text.file.saveas", "text":"Save &As", "cmd":"save-as"},
+        {"id":"text.file.saveall", "text":"Save A&ll", "shortcut":"file.save-all"},
+        {"id":"separator"},
+        {"id":"text.file.close", "text":"&Close", "shortcut":"file.close"},
+        {"id":"text.file.closeall", "text":"Clos&e All", "shortcut":"file.close-all"},
+        {"id":"separator"},
+        {"id":"text.file.print", "text":"&Print...", "shortcut":"file.print"},
+        {"id":"separator"},
+        {"id":"text.file.exit", "text":"E&xit", "shortcut":"exit"}
+    ]},
+    
+    {"id":"text.edit", "items":[
+        {"id":"text.edit.undo", "text":"&Undo", "shortcut":"edit.undo"},
+        {"id":"text.edit.redo", "text":"&Redo", "shortcut":"edit.redo"},
+        {"id":"separator"},
+        {"id":"text.edit.cut", "text":"Cu&t", "shortcut":"edit.cut"},
+        {"id":"text.edit.copy", "text":"&Copy", "shortcut":"edit.copy"},
+        {"id":"text.edit.paste", "text":"&Paste", "shortcut":"edit.paste"},
+        {"id":"text.edit.delete", "text":"&Delete", "shortcut":"edit.delete"},
+        {"id":"separator"},
+        {"id":"text.edit.selectall", "text":"Select &All", "shortcut":"edit.select-all"}
+    ]},
+    
+    {"id":"text.view", "items":[
+        {"id":"text.view.tabbars", "type":"check", "text":"Show &Tab Bars", "cmd":"toggle-tab-bar", "config":"show-tab-bar"},
+        {"id":"text.view.cmdbar", "type":"check", "text":"Auto-Hide &Command Bar", "cmd":"toggle-auto-hide-cmdbar", "config":"auto-hide-cmd-bar"},
+        {"id":"separator"},
+        {"id":"text.view.linenumbers", "type":"check", "text":"Show &Line Numbers", "cmd":"toggle-line-numbers", "config":"texteditor-show-line-numbers"},
+        {"id":"text.view.resetzoom", "text":"Reset &Zoom", "cmd":"zoom 1"},
+        {"id":"separator"},
+        {"id":"text.view.wordwrap", "type":"check", "text":"&Word Wrap", "cmd":"toggle-word-wrap", "config":"texteditor-enable-word-wrap"}
+    ]},
+    
+    {"id":"text.find", "items":[
+        {"id":"text.find.find", "text":"&Find...", "shortcut":"find.find"},
+        {"id":"text.find.replace", "text":"Find and &Replace...", "shortcut":"find.replace"},
+        {"id":"separator"},
+        {"id":"text.find.goto", "text":"&Go To...", "shortcut":"find.goto"}
+    ]},
+    
+    {"id":"text", "type":"menubar", "items":[
+        {"id":"text.file", "text":"&File", "submenu":"text.file"},
+        {"id":"text.edit", "text":"&Edit", "submenu":"text.edit"},
+        {"id":"text.view", "text":"&View", "submenu":"text.view"},
+        {"id":"text.find", "text":"F&ind", "submenu":"text.find"},
+        {"id":"text.settings", "text":"&Settings", "submenu":"generic.settings"},
+        {"id":"text.help", "text":"&Help", "submenu":"generic.help"}
+    ]},
+    
+    
+    {"id":"text.popup", "items":[
+        {"id":"text.popup.undo", "text":"&Undo", "shortcut":"edit.undo"},
+        {"id":"text.popup.redo", "text":"&Redo", "shortcut":"edit.redo"},
+        {"id":"separator"},
+        {"id":"text.popup.cut", "text":"Cu&t", "shortcut":"edit.cut"},
+        {"id":"text.popup.copy", "text":"&Copy", "shortcut":"edit.copy"},
+        {"id":"text.popup.paste", "text":"&Paste", "shortcut":"edit.paste"},
+        {"id":"text.popup.delete", "text":"&Delete", "shortcut":"edit.delete"},
+        {"id":"separator"},
+        {"id":"text.popup.selectall", "text":"Select &All", "shortcut":"edit.select-all"}
+    ]},
+    
+    {"id":"tabpopup", "items":[
+        {"id":"tabpopup.save", "text":"&Save", "shortcut":"file.save"},
+        {"id":"tabpopup.saveas", "text":"Save &As", "cmd":"save-as"},
+        {"id":"tabpopup.saveall", "text":"Save A&ll", "shortcut":"file.save-all"},
+        {"id":"separator"},
+        {"id":"tabpopup.close", "text":"&Close", "shortcut":"file.close"},
+        {"id":"tabpopup.closeall", "text":"Clos&e All", "shortcut":"file.close-all"},
+        {"id":"separator"},
+        {"id":"tabpopup.addfavourite", "text":"Add to Favourites", "cmd":"add-favourite"},
+        {"id":"tabpopup.removefavourite", "text":"Remove from Favourites", "cmd":"remove-favourite"}
+    ]}
+]}
